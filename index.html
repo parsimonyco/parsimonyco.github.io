@@ -285,6 +285,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
+
 <li>Hello World!</li>
 
 <li>Licenses</li>
@@ -8455,7 +8457,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 &lt;/$set&gt;
 </pre>
 </div>
-<div created="20140901120057909" modified="20170111011734336" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20140901120057909" modified="20170219232931552" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[list[$:/StoryList]]</pre>
 </div>
 <div title="$:/favicon.ico" type="image/x-icon" revision="0" bag="default">
@@ -10130,7 +10132,7 @@ $:/type/journal
 
 &lt;&lt;mt-tab-contents&gt;&gt;</pre>
 </div>
-<div caption="{{$:/plugins/amp/MagicTabs/images/info}}" created="20141106161534068" creator="Alberto Molina Pérez" description="Info" icon="" modified="20170219201932870" modifier="Alberto Molina Pérez" mt-list.filter="" mt-list.heading="" mt-list.template="$:/plugins/amp/MagicTabs/templates/tabs/info" tags="MagicTabs $:/type/tab $:/plugins/amp/MagicTabs/common $:/tabs/all" title="$:/plugins/amp/MagicTabs/tabs/info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div caption="{{$:/plugins/amp/MagicTabs/images/info}}" created="20141106161534068" creator="Alberto Molina Pérez" description="Info" icon="" modified="20170219232657873" modifier="Alberto Molina Pérez" mt-list.filter="" mt-list.heading="" mt-list.template="$:/plugins/amp/MagicTabs/templates/tabs/info" tags="MagicTabs $:/type/tab $:/plugins/amp/MagicTabs/common $:/tabs/all" title="$:/plugins/amp/MagicTabs/tabs/info" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define mt-seek-children()
 &lt;$list filter=&quot;[all[tiddlers]$(sourceField)$[$(storyTiddler)$]!is[system]!has[draft.of]sort[]]&quot;&gt;
 &lt;$link&gt;&lt;$transclude tiddler={{!!icon}}/&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;br&gt;
@@ -10144,6 +10146,8 @@ $:/type/journal
 
 \define tabInfo()
 &lt;div class=&quot;tc-menu-list-item&quot;&gt;
+
+
 
 &lt;div class=&quot;text-grey&quot;&gt;
 Back Links:
@@ -10256,7 +10260,7 @@ Back Links:
     }
 }</pre>
 </div>
-<div created="20170111020016408" modified="20170111020019833" title="$:/theme" revision="0" bag="default">
+<div created="20170111020016408" modified="20170219225756443" title="$:/theme" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.13" revision="0" bag="default">
@@ -10367,6 +10371,9 @@ Back Links:
         }
     }
 }</pre>
+</div>
+<div created="20170219232201776" modified="20170219232202982" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>fluid-fixed</pre>
 </div>
 <div author="Parsimony" created="20170108175451552" modified="20170108181053491" tags="programming [[computer science]]" title="Hello World!" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>A very typical first program, printing out:
