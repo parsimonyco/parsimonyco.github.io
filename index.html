@@ -183,6 +183,10 @@ Error message and password prompt
 
 <li>$:/core/ui/Buttons/theme</li>
 
+<li>$:/core/ui/CardSource</li>
+
+<li>$:/core/ui/CardSourceTemplate</li>
+
 <li>$:/core/ui/MoreSideBar/Drafts</li>
 
 <li>$:/core/ui/MoreSideBar/Shadows</li>
@@ -199,7 +203,11 @@ Error message and password prompt
 
 <li>$:/language</li>
 
+<li>$:/language/Buttons/Close/Hint</li>
+
 <li>$:/language/Buttons/CloseAll/Hint</li>
+
+<li>$:/language/Buttons/CloseOthers/Hint</li>
 
 <li>$:/language/Buttons/ExportPage/Caption</li>
 
@@ -8414,6 +8422,18 @@ $:/core/images/storyview-$(storyview)$
 &lt;/div&gt;
 &lt;/$reveal&gt;</pre>
 </div>
+<div created="20170220132514096" modified="20170220161042654" tags="" title="$:/core/ui/CardSource" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;$list filter=&quot;[all[current]fields[]] -text -bag -revision -type -title -tags -modified -created -author&quot; template=&quot;$:/core/ui/CardSourceTemplate&quot; variable=&quot;cSource&quot; emptyMessage=&quot;@@.text-grey none@@&quot;/&gt;</pre>
+</div>
+<div created="20170220135029005" modified="20170220163808839" tags="" title="$:/core/ui/CardSourceTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;div class=&quot;tc-menu-list-item&quot;&gt;
+&lt;$link to={{!!source}}&gt;
+&lt;$view field=&lt;&lt;cSource&gt;&gt;/&gt;
+&lt;/$link&gt;
+&lt;/div&gt;
+
+</pre>
+</div>
 <div caption="{{$:/language/SideBar/Drafts/Caption}}" tags="$:/tags/MoreSideBar!" title="$:/core/ui/MoreSideBar/Drafts" revision="0" bag="default">
 <pre>&lt;$list filter={{$:/core/Filters/Drafts!!filter}} template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;
 </pre>
@@ -8469,8 +8489,14 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20170111015557088" modified="20170111015557088" title="$:/language" revision="0" bag="default">
 <pre>$:/languages/en-GB</pre>
 </div>
+<div title="$:/language/Buttons/Close/Hint" revision="0" bag="default">
+<pre>Close this card</pre>
+</div>
 <div title="$:/language/Buttons/CloseAll/Hint" revision="0" bag="default">
 <pre>Close all cards</pre>
+</div>
+<div title="$:/language/Buttons/CloseOthers/Hint" revision="0" bag="default">
+<pre>Close other cards</pre>
 </div>
 <div title="$:/language/Buttons/ExportPage/Caption" revision="0" bag="default">
 <pre>export deck</pre>
@@ -10132,7 +10158,7 @@ $:/type/journal
 
 &lt;&lt;mt-tab-contents&gt;&gt;</pre>
 </div>
-<div caption="{{$:/plugins/amp/MagicTabs/images/info}}" created="20141106161534068" creator="Alberto Molina Pérez" description="Info" icon="" modified="20170219232657873" modifier="Alberto Molina Pérez" mt-list.filter="" mt-list.heading="" mt-list.template="$:/plugins/amp/MagicTabs/templates/tabs/info" tags="MagicTabs $:/type/tab $:/plugins/amp/MagicTabs/common $:/tabs/all" title="$:/plugins/amp/MagicTabs/tabs/info" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div caption="{{$:/plugins/amp/MagicTabs/images/info}}" created="20141106161534068" creator="Alberto Molina Pérez" description="Info" icon="" modified="20170220160511161" modifier="Alberto Molina Pérez" mt-list.filter="" mt-list.heading="" mt-list.template="$:/plugins/amp/MagicTabs/templates/tabs/info" tags="MagicTabs $:/type/tab $:/plugins/amp/MagicTabs/common $:/tabs/all" title="$:/plugins/amp/MagicTabs/tabs/info" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define mt-seek-children()
 &lt;$list filter=&quot;[all[tiddlers]$(sourceField)$[$(storyTiddler)$]!is[system]!has[draft.of]sort[]]&quot;&gt;
 &lt;$link&gt;&lt;$transclude tiddler={{!!icon}}/&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;br&gt;
@@ -10146,6 +10172,11 @@ $:/type/journal
 
 \define tabInfo()
 &lt;div class=&quot;tc-menu-list-item&quot;&gt;
+
+&lt;div class=&quot;text-grey&quot;&gt;
+Source:
+&lt;/div&gt;
+&lt;$transclude tiddler=&quot;$:/core/ui/CardSource&quot;/&gt;
 
 
 
@@ -10375,13 +10406,12 @@ Back Links:
 <div created="20170219232201776" modified="20170219232202982" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>fluid-fixed</pre>
 </div>
-<div author="Parsimony" created="20170108175451552" modified="20170108181053491" tags="programming [[computer science]]" title="Hello World!" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div author="Parsimony" created="20170220000929086" modified="20170220164145440" source="http://code.org" tags="programming [[computer science]]" title="Hello World!" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>A very typical first program, printing out:
 
 &lt;&lt;&lt;
 `&quot;Hello World!&quot;`
-&lt;&lt;&lt;
-</pre>
+&lt;&lt;&lt;</pre>
 </div>
 <div created="20170219193601009" modified="20170219193626844" tags="" title="Licenses" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[[The MIT License (MIT)]]</pre>
@@ -10389,7 +10419,7 @@ Back Links:
 <div created="20170219191022242" modified="20170219191129707" tags="" title="Parsimony" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Operates under [[The MIT License (MIT)]]</pre>
 </div>
-<div author="Parsimony" created="20170108175919089" modified="20170108190159276" tags="legal [[open source]] [[free software]] MIT" title="The MIT License (MIT)" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div author="Parsimony" created="20170220163931686" modified="20170220163942933" tags="legal [[open source]] [[free software]] MIT [[computer science]] [[Hello World!]]" title="The MIT License (MIT)" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Copyright 2017 Parsimony
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
